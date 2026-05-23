@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cf4uexday8p2d"]
+
+[ext_resource type="Script" uid="uid://dg1xckvv6b62n" path="res://scenes/objects/guide.gd" id="1_vd4nh"]
+[ext_resource type="Texture2D" uid="uid://f38ku23ox7gh" path="res://assets/sprites/paper/guide.png" id="2_pvhih"]
+[ext_resource type="Shader" uid="uid://cm7rosfmv45ds" path="res://assets/shaders/shadow.gdshader" id="2_rkgdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aduid"]
+size = Vector2(128, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkgdh"]
+size = Vector2(88, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7wqq"]
+shader = ExtResource("2_rkgdh")
+shader_parameter/drop_shadow_color = Color(0.45490196, 0.4392157, 0.4862745, 0.6039216)
+shader_parameter/shadow_offset = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvhih"]
+
+[node name="guide" type="Area2D" unique_id=1280497696]
+script = ExtResource("1_vd4nh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228380036]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_aduid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1374450173]
+position = Vector2(0, 70)
+shape = SubResource("RectangleShape2D_rkgdh")
+
+[node name="background" type="Sprite2D" parent="." unique_id=640046670]
+material = SubResource("ShaderMaterial_o7wqq")
+texture = ExtResource("2_pvhih")
+
+[node name="flip" type="Area2D" parent="background" unique_id=188041874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/flip" unique_id=1289190938]
+position = Vector2(54, 70)
+shape = SubResource("RectangleShape2D_pvhih")
+
+[node name="unflip" type="Area2D" parent="background" unique_id=1351251035]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/unflip" unique_id=1029417918]
+position = Vector2(-54, 70)
+shape = SubResource("RectangleShape2D_pvhih")
+
+[connection signal="input_event" from="background/flip" to="." method="flip_guide"]
+[connection signal="input_event" from="background/unflip" to="." method="flip_guide"]

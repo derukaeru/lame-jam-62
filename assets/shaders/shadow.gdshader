@@ -1,28 +1,36 @@
 shader_type canvas_item;
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
-uniform vec4 background_color : source_color;
-uniform vec4 shadow_color : source_color;
-// Currently pixels always in application size, so zooming in further wouldn't increase the size of the dropdown
-// but changing that would also be relatively trivial
-uniform vec2 offset_in_pixels;
+uniform vec4 drop_shadow_color : source_color = vec4(vec3(0), float(0.5));
+uniform vec2 shadow_offset = vec2(float(0), float(0.1));
 
-void fragment() {
-	
-	// Read screen texture
-	vec4 current_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
-	
-	// Check if the current color is our background color
-	if (length(current_color - background_color) < 0.01) {
-		
-		vec4 offset_color = textureLod(SCREEN_TEXTURE, SCREEN_UV - offset_in_pixels * SCREEN_PIXEL_SIZE, 0.0);
-		
-		// Check if at our offset position we have a color which is not the background (meaning here we need a shadow actually)
-		if (length(offset_color - background_color) > 0.01) {
-			// If so set it to our shadow color
-			current_color = shadow_color;
-		}
+void vertex() {
+	float max_offset = abs(shadow_offset.x);
+	if (abs(shadow_offset.y) > abs(shadow_offset.x)) {
+		max_offset = abs(shadow_offset.y);
 	}
-	
-	COLOR = current_color;
+	VERTEX *= float(1) + float(2) * max_offset;
+}
+vec4 sample_texture(sampler2D texture, vec2 uv)  {
+	if ((uv.x < 0.0 || uv.x > 1.0) || (uv.y < 0.0 || uv.y > 1.0))  {
+		return vec4(0.0);
+	} else {
+		return texture(texture, uv);
+	}
+}
+vec4 mixcolor(vec4 colA, vec4 colB)  {
+	return vec4((colA.rgb + colB.a * (colB.rgb - colA.rgb)), colA.a + colB.a);
+}
+void fragment()  {
+	float max_offset = abs(shadow_offset.x);
+	if (abs(shadow_offset.y) > abs(shadow_offset.x)) {
+		max_offset = abs(shadow_offset.y);
+	}
+	vec2 uv = UV * float(float(1) + float(2) * max_offset) - vec2(max_offset);
+	vec4 original_color = sample_texture(TEXTURE, uv);
+	vec4 shadow_color = vec4(drop_shadow_color.rgb, sample_texture(TEXTURE, uv - shadow_offset).a * drop_shadow_color.a);
+	if (shadow_color.a > float(0)) {
+		COLOR = mixcolor(shadow_color, original_color);
+	} else {
+		COLOR = original_color;
+	}
 }

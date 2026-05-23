@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://cr10ay5yhae77"]
 
 [ext_resource type="Script" uid="uid://co8qgm8g50b2h" path="res://scenes/objects/paper.gd" id="1_4ewj7"]
-[ext_resource type="Texture2D" uid="uid://deldefrcpqaxd" path="res://assets/sprites/paper/paper.png" id="2_fchak"]
+[ext_resource type="Shader" uid="uid://cm7rosfmv45ds" path="res://assets/shaders/shadow.gdshader" id="2_fchak"]
+[ext_resource type="Texture2D" uid="uid://deldefrcpqaxd" path="res://assets/sprites/paper/paper.png" id="3_tcnds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fchak"]
+size = Vector2(186, 264)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcnds"]
+shader = ExtResource("2_fchak")
+shader_parameter/drop_shadow_color = Color(0.69411767, 0.654902, 0.63529414, 0.627451)
+shader_parameter/shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tcnds"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
 [node name="paper" type="Area2D" unique_id=1793080479 groups=["paper"]]
 script = ExtResource("1_4ewj7")
@@ -15,19 +24,25 @@ shape = SubResource("RectangleShape2D_fchak")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1148911368]
 material = SubResource("ShaderMaterial_tcnds")
-texture = ExtResource("2_fchak")
+texture = ExtResource("3_tcnds")
 
-[node name="content" type="Label" parent="." unique_id=725478886]
-offset_left = -80.0
-offset_top = -72.0
-offset_right = 80.0
-offset_bottom = 120.0
+[node name="content" type="Label" parent="background" unique_id=725478886]
+offset_left = -85.0
+offset_top = -52.0
+offset_right = 85.0
+offset_bottom = 126.0
 
-[node name="title" type="Label" parent="." unique_id=1988964583]
+[node name="title" type="Label" parent="background" unique_id=1988964583]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -88.0
-offset_top = -128.0
-offset_right = 88.0
-offset_bottom = -80.0
+offset_left = -85.0
+offset_top = -124.0
+offset_right = -102.0
+offset_bottom = -61.0
 grow_horizontal = 2
+text = "BREAKING 
+NEWS"
+label_settings = SubResource("LabelSettings_tcnds")
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true

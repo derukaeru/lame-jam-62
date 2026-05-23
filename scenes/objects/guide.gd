@@ -1,9 +1,8 @@
 extends Area2D
 
-# IDK WHAT TO CALL TS
-var tainted: bool = false
-
 @onready var background: Sprite2D = $background
+@onready var flip_btn: Area2D = $background/flip
+@onready var unflip_btn: Area2D = $background/unflip
 
 var dragging:bool = false
 var drag_offset: Vector2 = Vector2.ZERO
@@ -13,6 +12,8 @@ var max_pos: Vector2 = Vector2(640 - 32, 448 - 32)
 
 var raise_time: float = 0.05
 var raise_amt: float = 0.02
+
+var flipped: bool = false
 
 func _input_event(_viewport, event, _shape_idx) -> void:
 	if event is InputEventMouseButton:
@@ -44,3 +45,18 @@ func _unhandled_input(event) -> void:
 
 func set_shader_param(val: Vector2) -> void:
 	background.material.set_shader_parameter("shadow_offset", val)
+
+func flip_guide(_v, event, _i):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if flipped:
+				flipped = false
+				flip_btn.input_pickable = true
+				unflip_btn.input_pickable = false
+				
+				background.texture = load("res://assets/sprites/paper/guide.png")
+			else:
+				flipped = true
+				flip_btn.input_pickable = false
+				unflip_btn.input_pickable = true
+				background.texture = load("res://assets/sprites/paper/guide_back.png")

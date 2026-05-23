@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://ciymvwvc32apb"]
 
 [ext_resource type="Texture2D" uid="uid://c5yv01i8fsxkj" path="res://assets/sprites/main/background.png" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://cr10ay5yhae77" path="res://scenes/objects/paper.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://cf4uexday8p2d" path="res://scenes/objects/guide.tscn" id="3_k2fmo"]
 
 [node name="main" type="Node2D" unique_id=708694748]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1092011380]
 texture = ExtResource("1_hyk8p")
 centered = false
+
+[node name="papers" type="Node2D" parent="." unique_id=796674784 groups=["papers"]]
+
+[node name="paper" parent="papers" unique_id=1793080479 instance=ExtResource("2_iuonh")]
+position = Vector2(270, 192)
+
+[node name="guide" parent="." unique_id=1280497696 instance=ExtResource("3_k2fmo")]
+position = Vector2(527, 310)
