@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://ciymvwvc32apb"]
 
+[ext_resource type="Texture2D" uid="uid://c5yv01i8fsxkj" path="res://assets/sprites/main/background.png" id="1_hyk8p"]
+
 [node name="main" type="Node2D" unique_id=708694748]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1092011380]
+texture = ExtResource("1_hyk8p")
+centered = false
