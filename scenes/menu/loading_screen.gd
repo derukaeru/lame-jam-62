@@ -3,6 +3,7 @@ extends CanvasLayer
 signal loading_screen_ready
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var cover: ColorRect = $cover
+@onready var fade: ColorRect = $fade
 
 func _ready() -> void:
 	animation.play("fade")
@@ -23,6 +24,8 @@ func _on_loading_finished() -> void:
 	tw.tween_method(transition, 0.5, 1.0, 0.5)
 	
 	await animation.animation_finished
+	cover.hide()
+	fade.hide()
 	queue_free()
 
 func transition(value: float) -> void:

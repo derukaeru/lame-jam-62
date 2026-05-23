@@ -17,8 +17,6 @@ func _process(_d) -> void:
 		if get_tree().paused:
 			get_tree().paused = false
 			pause_screen.hide()
-			Util.mouse_captured()
 		else:
 			get_tree().paused = true
 			pause_screen.show()
-			Util.mouse_visible()
