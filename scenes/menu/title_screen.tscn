@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://dix67ojrdr6ht"]
 
 [ext_resource type="Script" uid="uid://nssbqyv6g0q7" path="res://scenes/menu/title_screen.gd" id="1_cbih2"]
+[ext_resource type="Shader" uid="uid://sr5pdlg3o4mh" path="res://assets/shaders/paint_mix.gdshader" id="2_4crq4"]
+[ext_resource type="FontFile" uid="uid://b24f66mo8ebd8" path="res://assets/fonts/alagard.ttf" id="3_oq80g"]
+[ext_resource type="Texture2D" uid="uid://nw7gm8v8msn2" path="res://assets/sprites/title/title.png" id="4_oq80g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rd1m"]
+shader = ExtResource("2_4crq4")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.0
+shader_parameter/spin_speed = 5.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.69411767, 0.654902, 0.63529414, 1)
+shader_parameter/colour_2 = Color(0.83137256, 0.8, 0.7058824, 1)
+shader_parameter/colour_3 = Color(0.69411767, 0.654902, 0.63529414, 1)
+shader_parameter/contrast = 2.0
+shader_parameter/spin_amount = 0.13
+shader_parameter/pixel_filter = 700.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spmwh"]
 
 [node name="title_screen" type="Control" unique_id=198211424]
 layout_mode = 3
@@ -12,15 +33,16 @@ grow_vertical = 2
 script = ExtResource("1_cbih2")
 
 [node name="background" type="ColorRect" parent="." unique_id=1815373126]
+material = SubResource("ShaderMaterial_7rd1m")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="start" type="Label" parent="." unique_id=2060452243]
+material = SubResource("ShaderMaterial_spmwh")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -33,6 +55,20 @@ offset_right = 132.5
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_oq80g")
 text = "click anywhere to start"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="title" type="TextureRect" parent="." unique_id=1344402915]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 64.0
+offset_right = 164.0
+offset_bottom = 288.0
+grow_horizontal = 2
+texture = ExtResource("4_oq80g")

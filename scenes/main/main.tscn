@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://ciymvwvc32apb"]
 
 [node name="main" type="Node2D" unique_id=708694748]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1092011380]
