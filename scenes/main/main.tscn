@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://ciymvwvc32apb"]
 
 [ext_resource type="Texture2D" uid="uid://c5yv01i8fsxkj" path="res://assets/sprites/main/background.png" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://cr10ay5yhae77" path="res://scenes/objects/paper.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://cf4uexday8p2d" path="res://scenes/objects/guide.tscn" id="3_k2fmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fmo"]
+size = Vector2(135, 316)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3cfh"]
+size = Vector2(132, 316)
 
 [node name="main" type="Node2D" unique_id=708694748]
 
@@ -12,8 +17,17 @@ centered = false
 
 [node name="papers" type="Node2D" parent="." unique_id=796674784 groups=["papers"]]
 
-[node name="paper" parent="papers" unique_id=1793080479 instance=ExtResource("2_iuonh")]
-position = Vector2(241, 217)
-
 [node name="guide" parent="papers" unique_id=1280497696 instance=ExtResource("3_k2fmo")]
 position = Vector2(528, 310)
+
+[node name="submit" type="Area2D" parent="." unique_id=632757946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="submit" unique_id=445270604]
+position = Vector2(844.5, 258)
+shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="reject" type="Area2D" parent="." unique_id=1230473609]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reject" unique_id=834180533]
+position = Vector2(-122, 258)
+shape = SubResource("RectangleShape2D_l3cfh")

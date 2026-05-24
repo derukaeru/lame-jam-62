@@ -64,3 +64,5 @@ label_settings = SubResource("LabelSettings_tcnds")
 horizontal_alignment = 1
 autowrap_mode = 3
 uppercase = true
+
+[connection signal="area_entered" from="." to="." method="submit"]

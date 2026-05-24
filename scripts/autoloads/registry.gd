@@ -13,7 +13,18 @@ var UID: Dictionary = {
 }
 
 var papers: Dictionary = {
-	"title": "content"
+	"tainted": {
+		"club": [],
+		"bad_topic": [],
+		"unnamed_sources": [],
+		"banned_words": [],
+		"foreign": [],
+		"by_reporter": [],
+	},
+	"clean": {
+		"title": "content"
+	}
+	
 }
 
 var guide: Array = [

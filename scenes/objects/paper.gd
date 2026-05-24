@@ -77,3 +77,12 @@ func add_stamp(id: int):
 			
 			background.add_child(stamp)
 			stamps.append("heart")
+
+
+func submit(area):
+	if area.name == "submit":
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "global_position:x", global_position.x + 256, 0.5)
+	if area.name == "reject":
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "global_position:x", global_position.x - 256, 0.5)
