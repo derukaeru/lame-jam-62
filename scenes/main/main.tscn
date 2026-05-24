@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ciymvwvc32apb"]
 
 [ext_resource type="Texture2D" uid="uid://c5yv01i8fsxkj" path="res://assets/sprites/main/background.png" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://cf4uexday8p2d" path="res://scenes/objects/guide.tscn" id="3_k2fmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fmo"]
 size = Vector2(135, 316)
@@ -17,17 +16,14 @@ centered = false
 
 [node name="papers" type="Node2D" parent="." unique_id=796674784 groups=["papers"]]
 
-[node name="guide" parent="papers" unique_id=1280497696 instance=ExtResource("3_k2fmo")]
-position = Vector2(528, 310)
-
 [node name="submit" type="Area2D" parent="." unique_id=632757946]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="submit" unique_id=445270604]
-position = Vector2(844.5, 258)
+position = Vector2(872, 258)
 shape = SubResource("RectangleShape2D_k2fmo")
 
 [node name="reject" type="Area2D" parent="." unique_id=1230473609]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="reject" unique_id=834180533]
-position = Vector2(-122, 258)
+position = Vector2(-145, 256)
 shape = SubResource("RectangleShape2D_l3cfh")

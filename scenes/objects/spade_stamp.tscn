@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cat23bnw5fccq"]
+
+[ext_resource type="Texture2D" uid="uid://bxa4cyp8lchhf" path="res://assets/sprites/paper/spade_stamp.png" id="1_1mocx"]
+
+[node name="spade_stamp" type="Sprite2D" unique_id=434911263]
+modulate = Color(1, 1, 1, 0.6431373)
+texture = ExtResource("1_1mocx")
