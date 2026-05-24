@@ -54,12 +54,12 @@ autowrap_mode = 1
 [node name="title" type="Label" parent="background" unique_id=1988964583]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -112.0
+offset_left = -128.0
 offset_top = -159.0
-offset_right = -144.0
+offset_right = -128.0
 offset_bottom = -96.0
 grow_horizontal = 2
-text = "BREAKING NEWS"
+text = "Shut Down by Police"
 label_settings = SubResource("LabelSettings_tcnds")
 horizontal_alignment = 1
 autowrap_mode = 3
