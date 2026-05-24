@@ -3,7 +3,7 @@ extends Area2D
 # IDK WHAT TO CALL TS
 var tainted: bool = false
 var taint_type: String
-var taints: Array = ["club_stamp", "bad_topic", "unnamed_sources", "foreign", "banned_words", "by_reporter"]
+var taints: Array = ["club_stamp", "bad_topic", "unnamed_sources", "banned_words", "foreign", "by_reporter"]
 
 var stamps: Array = []
 
@@ -39,14 +39,14 @@ func _ready() -> void:
 				text = Registry.papers.tainted["bad_topic"][randi_range(0, 2)]
 			"unnamed_sources":
 				text = Registry.papers.tainted["unnamed_sources"][randi_range(0, 2)]
+			"banned_words":
+				text = Registry.papers.tainted["banned_words"][randi_range(0, 2)]
 			"foreign":
 				text = Registry.papers.tainted["foreign"][randi_range(0, 2)]
 				
 				if (randf_range(0.0, 1.0) > 0.6):
 					tainted = false
 					add_stamp(2)
-			"banned_words":
-				text = Registry.papers.tainted["banned_words"][randi_range(0, 2)]
 			"by_reporter":
 				text = Registry.papers.tainted["by_reporter"][randi_range(0, 2)]
 		
@@ -69,9 +69,9 @@ func _ready() -> void:
 		content.text = text[1].substr(0, 74)
 		content2.text = text[1].substr(74, -1)
 		
-		if randf_range(0.0, 1.0) > 0.5:
+		if randf_range(0.0, 1.0) > 0.7:
 			add_stamp(1)
-		if randf_range(0.0, 1.0) > 0.5:
+		if randf_range(0.0, 1.0) > 0.7:
 			add_stamp(2)
 
 func _input_event(_viewport, event, _shape_idx) -> void:
@@ -119,25 +119,25 @@ func add_stamp(id: int) -> void:
 	match id:
 		0:
 			var stamp = load(Registry.UID["club_stamp"]).instantiate()
-			stamp.position = Vector2(72, -120)
+			stamp.position = Vector2(72 + randi_range(-48, 8), -120 + randi_range(0, 64))
 			
 			background.add_child(stamp)
 			stamps.append("club")
 		1:
 			var stamp = load(Registry.UID["diamond_stamp"]).instantiate()
-			stamp.position = Vector2(-80, -135)
+			stamp.position = Vector2(-80 + randi_range(0, 64), -135 + randi_range(0, 48))
 			
 			background.add_child(stamp)
 			stamps.append("diamond")
 		2:
 			var stamp = load(Registry.UID["heart_stamp"]).instantiate()
-			stamp.position = Vector2(80, 134)
+			stamp.position = Vector2(80 + randi_range(-56, 0), 134 + randi_range(-60, 0))
 			
 			background.add_child(stamp)
 			stamps.append("heart")
 		3:
 			var stamp = load(Registry.UID["spade_stamp"]).instantiate()
-			stamp.position = Vector2(34, -16)
+			stamp.position = Vector2(34 + randi_range(-56, 0), -16 + randi_range(-48, 64))
 			
 			background.add_child(stamp)
 			stamps.append("spade")

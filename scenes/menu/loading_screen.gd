@@ -19,13 +19,15 @@ func _on_progress_changed(_value) -> void:
 
 func _on_loading_finished() -> void:
 	animation.play_backwards("fade")
+	fade.hide()
 	
 	var tw = get_tree().create_tween()
 	tw.tween_method(transition, 0.5, 1.0, 0.5)
 	
 	await animation.animation_finished
+	
 	cover.hide()
-	fade.hide()
+	
 	queue_free()
 
 func transition(value: float) -> void:

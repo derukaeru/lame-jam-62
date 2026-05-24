@@ -30,13 +30,12 @@ func _ready() -> void:
 	
 	submitted.connect(submitted_paper)
 	rejected.connect(rejected_paper)
-	
-	get_tree().create_timer(1.2).timeout.connect(start_game)
 
 func start_game() -> void:
+	await get_tree().create_timer(1.2).timeout
 	spawn_guide()
 	await get_tree().create_timer(1.2).timeout
-	spawn_paper()
+	spawn_paper(1.0)
 	
 	paper_per_day = 10 + ((day - 1) * 2)
 	paper_today = 0
@@ -55,14 +54,14 @@ func _unhandled_input(event) -> void:
 		dragging = false
 		dragged_paper = null
 
-func spawn_paper() -> void:
+func spawn_paper(speed: float = 0.4) -> void:
 	var paper = load(Registry.UID["paper"]).instantiate()
 	paper.global_position = Vector2(360.0, -205.0)
 	
 	Util.get_group_node("papers").add_child(paper)
 	
 	var tw: Tween = get_tree().create_tween()
-	tw.tween_property(paper, "global_position:y", paper.global_position.y + 358.0, 1.0)
+	tw.tween_property(paper, "global_position:y", paper.global_position.y + 358.0, speed)
 
 func spawn_guide() -> void:
 	var guide = load(Registry.UID["guide"]).instantiate()
@@ -82,8 +81,6 @@ func change_guide() -> void:
 func next_day() -> void:
 	day += 1
 	paper_per_day = 10 + ((day - 1) * 2)
-	
-	change_guide()
 
 func end_day() -> void:
 	await get_tree().create_timer(1.5).timeout

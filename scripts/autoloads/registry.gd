@@ -42,7 +42,7 @@ var guide: Array = [
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X", ""],
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", ""],
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
-	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n"],
+	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n"],
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n"],
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
