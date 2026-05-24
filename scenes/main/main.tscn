@@ -13,7 +13,7 @@ centered = false
 [node name="papers" type="Node2D" parent="." unique_id=796674784 groups=["papers"]]
 
 [node name="paper" parent="papers" unique_id=1793080479 instance=ExtResource("2_iuonh")]
-position = Vector2(270, 192)
+position = Vector2(241, 217)
 
-[node name="guide" parent="." unique_id=1280497696 instance=ExtResource("3_k2fmo")]
-position = Vector2(527, 310)
+[node name="guide" parent="papers" unique_id=1280497696 instance=ExtResource("3_k2fmo")]
+position = Vector2(528, 310)

@@ -26,8 +26,8 @@ Util="*uid://b656wu4av8huq"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=448
+window/size/viewport_width=720
+window/size/viewport_height=512
 window/stretch/mode="viewport"
 
 [editor_plugins]
@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 paper=""
 papers=""
+stack_sort=""
 
 [gui]
 

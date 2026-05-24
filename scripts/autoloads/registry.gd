@@ -8,3 +8,7 @@ var UID: Dictionary = {
 	"main": "uid://ciymvwvc32apb",
 	"club_stamp": "uid://xhht0hei3d8v"
 }
+
+var papers: Dictionary = {
+	"title": "content"
+}

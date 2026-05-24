@@ -5,21 +5,28 @@
 [ext_resource type="Texture2D" uid="uid://deldefrcpqaxd" path="res://assets/sprites/paper/paper.png" id="3_tcnds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fchak"]
-size = Vector2(186, 264)
+size = Vector2(256, 329)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tcnds"]
 shader = ExtResource("2_fchak")
 shader_parameter/drop_shadow_color = Color(0.69411767, 0.654902, 0.63529414, 0.627451)
 shader_parameter/shadow_offset = Vector2(0, 0)
 
+[sub_resource type="LabelSettings" id="LabelSettings_d4l53"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_45wan"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_tcnds"]
 font_size = 32
 font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
-[node name="paper" type="Area2D" unique_id=1793080479 groups=["paper"]]
+[node name="paper" type="Area2D" unique_id=1793080479 groups=["paper", "stack_sort"]]
 script = ExtResource("1_4ewj7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833291017]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_fchak")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1148911368]
@@ -27,21 +34,32 @@ material = SubResource("ShaderMaterial_tcnds")
 texture = ExtResource("3_tcnds")
 
 [node name="content" type="Label" parent="background" unique_id=725478886]
-offset_left = -85.0
-offset_top = -52.0
-offset_right = 85.0
-offset_bottom = 126.0
+offset_left = -112.0
+offset_top = -86.0
+offset_right = 30.0
+offset_bottom = -17.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod te"
+label_settings = SubResource("LabelSettings_d4l53")
+autowrap_mode = 1
+
+[node name="content2" type="Label" parent="background" unique_id=2134656138]
+offset_left = -112.0
+offset_top = -16.0
+offset_right = 112.0
+offset_bottom = 161.0
+text = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mo"
+label_settings = SubResource("LabelSettings_45wan")
+autowrap_mode = 1
 
 [node name="title" type="Label" parent="background" unique_id=1988964583]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = -85.0
-offset_top = -124.0
-offset_right = -102.0
-offset_bottom = -61.0
+offset_left = -112.0
+offset_top = -159.0
+offset_right = -144.0
+offset_bottom = -96.0
 grow_horizontal = 2
-text = "BREAKING 
-NEWS"
+text = "BREAKING NEWS"
 label_settings = SubResource("LabelSettings_tcnds")
 horizontal_alignment = 1
 autowrap_mode = 3

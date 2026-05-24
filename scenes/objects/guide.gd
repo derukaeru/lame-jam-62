@@ -8,7 +8,7 @@ var dragging:bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
 var min_pos: Vector2 = Vector2(32, 32)
-var max_pos: Vector2 = Vector2(640 - 32, 448 - 32)
+var max_pos: Vector2 = Vector2(720 - 32, 512 - 32)
 
 var raise_time: float = 0.05
 var raise_amt: float = 0.02
@@ -18,10 +18,17 @@ var flipped: bool = false
 func _input_event(_viewport, event, _shape_idx) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			if GameManager.dragging and not GameManager.dragged_paper == self: return
+			
 			dragging = event.pressed
+			GameManager.dragging = event.pressed
+			
 			if dragging:
+				GameManager.dragged_paper = self
 				drag_offset = event.position
-				z_index = 1
+				
+				GameManager.top_z += 1
+				z_index = GameManager.top_z
 				
 				var tween = get_tree().create_tween()
 				tween.tween_property(background, "position", Vector2(-8, -8), raise_time)
@@ -36,8 +43,11 @@ func _input_event(_viewport, event, _shape_idx) -> void:
 
 func _unhandled_input(event) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		if GameManager.dragged_paper == self: 
+			GameManager.dragging = false
+			GameManager.dragged_paper = null
+		
 		dragging = false
-		z_index = 0
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(background, "position", Vector2(0, 0), raise_time)
