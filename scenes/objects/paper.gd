@@ -2,6 +2,7 @@ extends Area2D
 
 # IDK WHAT TO CALL TS
 var tainted: bool = false
+var has_stamp: bool = false
 
 @onready var background: Sprite2D = $background
 
@@ -13,6 +14,9 @@ var max_pos: Vector2 = Vector2(640 - 32, 448 - 32)
 
 var raise_time: float = 0.05
 var raise_amt: float = 0.02
+
+func _ready():
+	add_stamp()
 
 func _input_event(_viewport, event, _shape_idx) -> void:
 	if event is InputEventMouseButton:
@@ -44,3 +48,10 @@ func _unhandled_input(event) -> void:
 
 func set_shader_param(val: Vector2) -> void:
 	background.material.set_shader_parameter("shadow_offset", val)
+
+func add_stamp():
+	var stamp = load(Registry.UID["club_stamp"]).instantiate()
+	stamp.position = Vector2(66, -72)
+	
+	background.add_child(stamp)
+	has_stamp = true

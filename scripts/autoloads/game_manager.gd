@@ -2,7 +2,8 @@ extends Node
 
 @onready var pause_screen = load(Registry.UID["pause_screen"]).instantiate()
 
-var canvas_layer = CanvasLayer.new()
+var canvas_layer: CanvasLayer = CanvasLayer.new()
+var day: int = 0
 
 func _ready() -> void:
 	add_child(canvas_layer)
