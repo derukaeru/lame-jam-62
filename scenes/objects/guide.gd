@@ -4,11 +4,12 @@ extends Area2D
 @onready var flip_btn: Area2D = $background/flip
 @onready var unflip_btn: Area2D = $background/unflip
 
+@onready var conditions: Label = $background/conditions
+@onready var back: Label = $background/back
+@onready var check: Label = $background/check
+
 var dragging:bool = false
 var drag_offset: Vector2 = Vector2.ZERO
-
-var min_pos: Vector2 = Vector2(32, 32)
-var max_pos: Vector2 = Vector2(720 - 32, 512 - 32)
 
 var raise_time: float = 0.05
 var raise_amt: float = 0.02
@@ -37,8 +38,8 @@ func _input_event(_viewport, event, _shape_idx) -> void:
 	elif event is InputEventMouseMotion and dragging:
 		var new_position = global_position + event.relative
 		
-		new_position.x = clamp(new_position.x, min_pos.x, max_pos.x)
-		new_position.y = clamp(new_position.y, min_pos.y, max_pos.y)
+		new_position.x = clamp(new_position.x, GameManager.min_pos.x, GameManager.max_pos.x)
+		new_position.y = clamp(new_position.y, GameManager.min_pos.y, GameManager.max_pos.y)
 		global_position = new_position
 
 func _unhandled_input(event) -> void:
@@ -65,8 +66,14 @@ func flip_guide(_v, event, _i):
 				unflip_btn.input_pickable = false
 				
 				background.texture = load("res://assets/sprites/paper/guide.png")
+				conditions.show()
+				back.hide()
+				check.show()
 			else:
 				flipped = true
 				flip_btn.input_pickable = false
 				unflip_btn.input_pickable = true
 				background.texture = load("res://assets/sprites/paper/guide_back.png")
+				back.show()
+				conditions.hide()
+				check.hide()

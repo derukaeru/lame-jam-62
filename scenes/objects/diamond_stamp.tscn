@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://s45v8byw4uca"]
+
+[ext_resource type="Texture2D" uid="uid://cyvgswhdcnfq4" path="res://assets/sprites/paper/diamond_stamp.png" id="1_plw7l"]
+
+[node name="diamond_stamp" type="Sprite2D" unique_id=1129953313]
+modulate = Color(1, 1, 1, 0.7058824)
+texture = ExtResource("1_plw7l")

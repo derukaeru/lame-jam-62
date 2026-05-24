@@ -17,7 +17,16 @@ shader_parameter/shadow_offset = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvhih"]
 
-[node name="guide" type="Area2D" unique_id=1280497696 groups=["stack_sort"]]
+[sub_resource type="LabelSettings" id="LabelSettings_rkgdh"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_os0dk"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7wqq"]
+font_color = Color(0.45490196, 0.4392157, 0.4862745, 1)
+
+[node name="guide" type="Area2D" unique_id=1280497696 groups=["guide", "stack_sort"]]
 script = ExtResource("1_vd4nh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228380036]
@@ -45,9 +54,31 @@ input_pickable = false
 position = Vector2(-86, 102)
 shape = SubResource("RectangleShape2D_pvhih")
 
-[node name="Label" type="Label" parent="background" unique_id=66157501]
-offset_right = 40.0
-offset_bottom = 15.0
+[node name="conditions" type="Label" parent="background" unique_id=66157501]
+offset_left = -90.0
+offset_top = -81.0
+offset_right = 91.0
+offset_bottom = 90.0
+text = "1. Remove all articles with a Club stamp."
+label_settings = SubResource("LabelSettings_rkgdh")
+autowrap_mode = 3
+
+[node name="back" type="Label" parent="background" unique_id=996537176]
+visible = false
+offset_left = -91.0
+offset_top = -106.0
+offset_right = 91.0
+offset_bottom = 88.0
+label_settings = SubResource("LabelSettings_os0dk")
+autowrap_mode = 3
+
+[node name="check" type="Label" parent="background" unique_id=653061942]
+offset_left = -90.0
+offset_top = 91.0
+offset_right = 42.0
+offset_bottom = 106.0
+text = "Check back paper"
+label_settings = SubResource("LabelSettings_o7wqq")
 
 [connection signal="input_event" from="background/flip" to="." method="flip_guide"]
 [connection signal="input_event" from="background/unflip" to="." method="flip_guide"]

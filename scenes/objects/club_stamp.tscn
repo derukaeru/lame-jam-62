@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://xhht0hei3d8v"]
+
+[ext_resource type="Texture2D" uid="uid://ccf1mu7mpk4e0" path="res://assets/sprites/paper/club_stamp.png" id="1_v2ku8"]
+
+[node name="club_stamp" type="Sprite2D" unique_id=26259925]
+modulate = Color(1, 1, 1, 0.627451)
+texture = ExtResource("1_v2ku8")

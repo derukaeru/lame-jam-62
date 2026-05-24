@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dd04lqi4s63qw"]
+
+[ext_resource type="Texture2D" uid="uid://dct0drys4agpl" path="res://assets/sprites/paper/heart_stamp.png" id="1_x3gde"]
+
+[node name="heart_stamp" type="Sprite2D" unique_id=1618563012]
+modulate = Color(1, 1, 1, 0.7764706)
+texture = ExtResource("1_x3gde")
