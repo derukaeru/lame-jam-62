@@ -35,6 +35,10 @@ font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 font_size = 32
 font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4icbj"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_pwikx"]
 font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
@@ -76,11 +80,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -136.0
-offset_top = 209.0
+offset_top = 165.0
 offset_right = 136.0
-offset_bottom = 239.0
+offset_bottom = 195.0
 grow_horizontal = 2
-text = "Processed Paper:"
+text = "Reviewed Paper:"
 label_settings = SubResource("LabelSettings_s0tpp")
 
 [node name="paper_correct" type="Label" parent="." unique_id=105750314]
@@ -92,9 +96,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -159.0
-offset_top = 26.0
+offset_top = -18.0
 offset_right = 159.0
-offset_bottom = 56.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Correctly Reviewed:"
@@ -109,19 +113,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -149.0
-offset_top = 69.0
+offset_top = 25.0
 offset_right = 149.0
-offset_bottom = 99.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Wrongly reviewed:"
+text = "Wrongly Reviewed:"
 label_settings = SubResource("LabelSettings_54jbx")
 
 [node name="chances" type="Label" parent="." unique_id=1540203586]
-layout_mode = 0
-offset_right = 60.0
-offset_bottom = 15.0
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 64.0
+offset_right = 69.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Chances: "
+label_settings = SubResource("LabelSettings_4icbj")
 
 [node name="continue" type="Label" parent="." unique_id=415807080]
 visible = false
@@ -132,9 +147,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -101.0
-offset_top = -52.0
+offset_top = -75.0
 offset_right = 102.0
-offset_bottom = -37.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Click anywhere to continue"
