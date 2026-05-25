@@ -6,6 +6,7 @@ var UID: Dictionary = {
 	"title_screen": "uid://dix67ojrdr6ht",
 	"pause_screen": "uid://7jemke30bxqq",
 	"end_day_screen": "uid://bpsa3xpowqm02",
+	"end_screen": "uid://bt5vwfj50ytso",
 	"main": "uid://ciymvwvc32apb",
 	
 	"club_stamp": "uid://xhht0hei3d8v",
@@ -14,8 +15,10 @@ var UID: Dictionary = {
 	"spade_stamp": "uid://cat23bnw5fccq",
 	
 	"paper": "uid://cr10ay5yhae77",
-	"guide": "uid://cf4uexday8p2d"
+	"guide": "uid://cf4uexday8p2d",
+	"intro": "uid://5e1fa3r7v3jy"
 }
+
 var papers: Dictionary = {
 	"tainted": {
 		"bad_topic": [
@@ -40,10 +43,10 @@ var papers: Dictionary = {
 			["Workers Protest Wage Cuts", "Hundreds of factory workers staged a protest outside Veldra Manufacturing after the company announced a 15 percent wage reduction. Union leaders called it an act of aggression. Riot police were stationed nearby as a precaution. Management says cuts are necessary to stay solvent."],
 		],
 		"foreign": [
-			["Eastholm Rejects Deal", "The Eastholm parliament voted 61 to 44 against the proposed bilateral trade agreement citing unfavorable tariff terms. Our trade minister expressed disappointment. Analysts say this sets back regional economic cooperation by at least two years. Renegotiation talks have not been scheduled."],
-			["Varnec Border Tensions", "Armed units from Varnec have moved closer to the northern border according to satellite imagery reviewed by regional analysts. No shots have been fired. Diplomatic channels remain open but strained. The foreign ministry issued a statement urging restraint and calling for multilateral dialogue."],
+			["Neighbor Rejects Deal", "The Eastholm parliament voted 61 to 44 against the proposed bilateral trade agreement citing unfavorable tariff terms. Our trade minister expressed disappointment. Analysts say this sets back regional economic cooperation by at least two years. Renegotiation talks have not been scheduled."],
+			["Country Border Tensions", "Armed units from Varnec have moved closer to the northern border according to satellite imagery reviewed by regional analysts. No shots have been fired. Diplomatic channels remain open but strained. The foreign ministry issued a statement urging restraint and calling for multilateral dialogue."],
 			["Refugee Numbers Surge", "The Kellian border post recorded over 4,000 crossings this week, the highest single-week figure in three years. Aid organizations say resources are critically strained. The government has not announced additional support. International bodies are urging an emergency response before conditions worsen."],
-			["Aldovar Vote Disputed", "Opposition leaders in Aldovar are refusing to accept preliminary results from Sunday's national vote. International observers flagged irregularities at several polling stations. The ruling party claims a decisive victory. Protests have formed outside the capital's electoral commission building."],
+			["International Vote Disputed", "Opposition leaders in Aldovar are refusing to accept preliminary results from Sunday's national vote. International observers flagged irregularities at several polling stations. The ruling party claims a decisive victory. Protests have formed outside the capital's electoral commission building."],
 			["Foreign Press Banned", "The Drev government announced a full suspension of foreign media credentials effective immediately. No reason was given officially. Journalists from four countries were escorted out of the capital yesterday. Press freedom organizations are calling it one of the most severe crackdowns seen this decade."],
 		],
 		"by_reporter": [
@@ -63,21 +66,21 @@ var papers: Dictionary = {
 		["Farmers Market", "The Creston seasonal farmers market opens this Saturday at Bound Square for the first time since winter. Over 30 vendors will be present selling produce, preserves, and handmade goods. Hours are 7am to 1pm. Two new vendors specializing in local honey and fresh herbs are joining this season."],
 		["Community Pool Reopens", "After repairs to the filtration system were completed ahead of schedule, the Westfield Community Pool will reopen this Thursday, two weeks earlier than planned. Admission remains unchanged. Summer swim lessons are still accepting registrations. The pool deck has also been resurfaced as part of the work."],
 		["Shelter Needs Volunteers", "The Creston Animal Shelter is looking for weekend volunteers to help walk and socialize dogs ahead of an adoption event next month. No experience is required. Applicants must be 16 or older. The shelter currently has 47 dogs available for adoption. Register at the shelter's front desk."],
-		["Mural Finished at City Hall", "Artist Davan Reyes has completed a large mural on the east wall of City Hall commissioned earlier this year. The piece depicts the city's history from its founding through the present. It took four months to finish. Reyes says it is the largest work of his career. Viewing is open during building hours."],
+		["City Hall Murals", "Artist Davan Reyes has completed a large mural on the east wall of City Hall commissioned earlier this year. The piece depicts the city's history from its founding through the present. It took four months to finish. Reyes says it is the largest work of his career. Viewing is open during building hours."],
 		["Record Cleanup Turnout", "Over 300 residents participated in last weekend's annual city cleanup drive, the highest turnout in twelve years. Volunteers collected waste across 14 districts. The parks department says 8 tons of trash were removed in a single morning. Organizers are already planning next year's event with expanded coverage."],
 	]
 }
 
 var guide: Array = [
 	["1. Remove all articles with a Club stamp.", ""],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X", ""],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", ""],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government", ""],
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", ""],
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n"],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n"],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n7. Override all rules preceding if paper has Spade stamp.\n"],
-	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning X \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Kill any paper with unnamed sources.", 
+	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n7. Override all rules preceding if paper has Spade stamp.\n8. Remove any article  by Reporter (name). No Exceptions."],
 ]

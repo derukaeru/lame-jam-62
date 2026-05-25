@@ -28,7 +28,7 @@ func _ready() -> void:
 		var text: Array
 		match taint_type:
 			"club_stamp":
-				text = Registry.papers.clean[randi_range(0, 5)]
+				text = Registry.papers.clean[randi_range(0, 9)]
 				
 				add_stamp(0)
 				
@@ -64,7 +64,7 @@ func _ready() -> void:
 		if randf_range(0.0, 1.0) > 0.5 and not taint_type == "foreign":
 			add_stamp(2)
 	else:
-		var text: Array = Registry.papers.clean[randi_range(0, 5)]
+		var text: Array = Registry.papers.clean[randi_range(0, 9)]
 		title.text = text[0]
 		content.text = text[1].substr(0, 74)
 		content2.text = text[1].substr(74, -1)

@@ -59,7 +59,6 @@ offset_top = -159.0
 offset_right = -128.0
 offset_bottom = -96.0
 grow_horizontal = 2
-text = "Shut Down by Police"
 label_settings = SubResource("LabelSettings_tcnds")
 horizontal_alignment = 1
 autowrap_mode = 3

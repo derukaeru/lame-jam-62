@@ -4,7 +4,7 @@ extends Area2D
 @onready var flip_btn: Area2D = $background/flip
 @onready var unflip_btn: Area2D = $background/unflip
 
-@onready var conditions: Label = $background/conditions
+@onready var front: Label = $background/front
 @onready var back: Label = $background/back
 @onready var check: Label = $background/check
 
@@ -57,7 +57,7 @@ func _unhandled_input(event) -> void:
 func set_shader_param(val: Vector2) -> void:
 	background.material.set_shader_parameter("shadow_offset", val)
 
-func flip_guide(_v, event, _i):
+func _flip(_v, event, _i):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if flipped:
@@ -65,15 +65,15 @@ func flip_guide(_v, event, _i):
 				flip_btn.input_pickable = true
 				unflip_btn.input_pickable = false
 				
-				background.texture = load("res://assets/sprites/paper/guide.png")
-				conditions.show()
+				background.texture = load("res://assets/sprites/paper/intro.png")
+				front.show()
 				back.hide()
-				#check.show()
+				check.show()
 			else:
 				flipped = true
 				flip_btn.input_pickable = false
 				unflip_btn.input_pickable = true
-				background.texture = load("res://assets/sprites/paper/guide_back.png")
+				background.texture = load("res://assets/sprites/paper/intro_back.png")
 				back.show()
-				conditions.hide()
-				#check.hide()
+				front.hide()
+				check.hide()

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://5e1fa3r7v3jy"]
+
+[ext_resource type="Script" uid="uid://lvhxdahatcd1" path="res://scenes/objects/intro.gd" id="1_ba8si"]
+[ext_resource type="Shader" uid="uid://cm7rosfmv45ds" path="res://assets/shaders/shadow.gdshader" id="2_0j7ud"]
+[ext_resource type="Texture2D" uid="uid://sgu3u7i40guq" path="res://assets/sprites/paper/intro.png" id="2_yxhq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxhq2"]
+size = Vector2(191, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_warm1"]
+size = Vector2(150, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_warm1"]
+shader = ExtResource("2_0j7ud")
+shader_parameter/drop_shadow_color = Color(0.45490196, 0.4392157, 0.4862745, 0.7607843)
+shader_parameter/shadow_offset = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7ud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_warm1"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qku28"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fbnwn"]
+font_color = Color(0.45490196, 0.4392157, 0.4862745, 1)
+
+[node name="intro" type="Area2D" unique_id=1018756711]
+script = ExtResource("1_ba8si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1405569671]
+position = Vector2(0.5, -18)
+shape = SubResource("RectangleShape2D_yxhq2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=492847185]
+position = Vector2(0, 70)
+shape = SubResource("RectangleShape2D_warm1")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1573900787]
+material = SubResource("ShaderMaterial_warm1")
+texture = ExtResource("2_yxhq2")
+
+[node name="flip" type="Area2D" parent="background" unique_id=1095327102]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/flip" unique_id=282587350]
+position = Vector2(86, 70)
+shape = SubResource("RectangleShape2D_0j7ud")
+
+[node name="unflip" type="Area2D" parent="background" unique_id=717283384]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/unflip" unique_id=403432687]
+position = Vector2(-86, 70)
+shape = SubResource("RectangleShape2D_0j7ud")
+
+[node name="front" type="Label" parent="background" unique_id=1711170799]
+offset_left = -92.0
+offset_top = -76.0
+offset_right = 92.0
+offset_bottom = 29.0
+text = "Welcome, Editor.
+
+This is your new job.
+
+Fail three times, and you will be removed."
+label_settings = SubResource("LabelSettings_warm1")
+autowrap_mode = 3
+
+[node name="back" type="Label" parent="background" unique_id=1721537755]
+visible = false
+offset_left = -94.0
+offset_top = -76.0
+offset_right = 94.0
+offset_bottom = 29.0
+text = "Review all of the paper.
+
+Drag to the left if it violates our rules.
+Drag to right otherwise.
+
+You have 7 days."
+label_settings = SubResource("LabelSettings_qku28")
+autowrap_mode = 3
+
+[node name="check" type="Label" parent="background" unique_id=1121473099]
+offset_left = -93.0
+offset_top = 62.0
+offset_right = 39.0
+offset_bottom = 77.0
+text = "Check back paper"
+label_settings = SubResource("LabelSettings_fbnwn")
+
+[connection signal="input_event" from="background/flip" to="." method="_flip"]
+[connection signal="input_event" from="background/unflip" to="." method="_flip"]

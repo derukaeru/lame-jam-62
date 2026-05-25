@@ -55,8 +55,8 @@ position = Vector2(-86, 102)
 shape = SubResource("RectangleShape2D_pvhih")
 
 [node name="conditions" type="Label" parent="background" unique_id=66157501]
-offset_left = -90.0
-offset_top = -81.0
+offset_left = -92.0
+offset_top = -61.0
 offset_right = 91.0
 offset_bottom = 90.0
 text = "1. Remove all articles with a Club stamp."
@@ -73,6 +73,7 @@ label_settings = SubResource("LabelSettings_os0dk")
 autowrap_mode = 3
 
 [node name="check" type="Label" parent="background" unique_id=653061942]
+visible = false
 offset_left = -90.0
 offset_top = 91.0
 offset_right = 42.0
