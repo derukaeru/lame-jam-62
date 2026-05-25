@@ -56,8 +56,8 @@ func _ready() -> void:
 				tainted = false
 		
 		title.text = text[0]
-		content.text = text[1].substr(0, 74)
-		content2.text = text[1].substr(74, -1)
+		content.text = text[1].substr(0, 72)
+		content2.text = text[1].substr(72, -1)
 		
 		if randf_range(0.0, 1.0) > 0.5 and not taint_type == "club_stamp":
 			add_stamp(1)

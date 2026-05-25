@@ -51,6 +51,8 @@ func start_game() -> void:
 	
 	paper_per_day = 10 + ((day - 1) * 2)
 	paper_today = 0
+	correct_paper = 0
+	wrong_paper = 0
 
 #func _process(_d) -> void:
 	#if Input.is_action_just_pressed("ui_cancel"):
@@ -104,6 +106,7 @@ func next_day() -> void:
 	
 	paper_per_day = 10 + ((day - 1) * 2)
 	correct_paper = 0
+	wrong_paper = 0
 	paper_today = 0
 
 func end_day() -> void:
@@ -130,6 +133,7 @@ func submitted_paper(paper: Area2D) -> void:
 
 func rejected_paper(paper: Area2D) -> void:
 	paper.queue_free()
+	
 	paper_today += 1
 	GameManager.total_paper_processed += 1
 	
