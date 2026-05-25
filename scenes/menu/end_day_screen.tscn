@@ -42,6 +42,13 @@ font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_pwikx"]
 font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_u6ldi"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h788s"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
 [node name="end_day_screen" type="Control" unique_id=292849347]
 layout_mode = 3
 anchors_preset = 15
@@ -154,3 +161,33 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Click anywhere to continue"
 label_settings = SubResource("LabelSettings_pwikx")
+
+[node name="day" type="Label" parent="." unique_id=1982325176]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = 110.0
+offset_right = 36.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "Day 1"
+label_settings = SubResource("LabelSettings_u6ldi")
+
+[node name="return" type="Label" parent="." unique_id=1966001771]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -75.0
+offset_right = 90.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Click anywhere to menu"
+label_settings = SubResource("LabelSettings_h788s")

@@ -34,15 +34,24 @@ func _ready() -> void:
 	$chances.text = "Chances: " + str(GameManager.chance)
 	
 	await get_tree().create_timer(1.0).timeout
-	$continue.show()
+	if GameManager.chance <= 0:
+		$return.show()
+	else:
+		$continue.show()
 	leaving = false
 
 func _process(_delta) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not leaving:
 		leaving = true
 		
-		if GameManager.day >= 8:
-			SceneChanger.change_scene("end_day")
+		if GameManager.chance <= 0:
+			GameManager.day = 0
+			GameManager.chance = 3
+			
+			SceneChanger.change_scene("title_screen")
 		else:
-			GameManager.next_day()
-			SceneChanger.change_scene("main")
+			if GameManager.day >= 8:
+				SceneChanger.change_scene("end_day")
+			else:
+				GameManager.next_day()
+				SceneChanger.change_scene("main")
