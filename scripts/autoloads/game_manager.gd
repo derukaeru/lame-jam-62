@@ -116,7 +116,7 @@ func submitted_paper(paper: Area2D) -> void:
 	paper_today += 1
 	GameManager.total_paper_processed += 1
 	
-	if paper.tainted:
+	if not paper.tainted:
 		correct_paper += 1
 		GameManager.total_correct_paper += 1
 	else:

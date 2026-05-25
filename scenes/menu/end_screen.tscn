@@ -20,6 +20,25 @@ shader_parameter/spin_amount = 0.13
 shader_parameter/pixel_filter = 700.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_x714m"]
+font_size = 48
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gml2"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3ujy"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wt88"]
+font_size = 32
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ea3v3"]
+font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2o1e"]
 font_size = 32
 font_color = Color(0.1254902, 0.14117648, 0.21176471, 1)
 
@@ -53,3 +72,87 @@ offset_bottom = 95.0
 grow_horizontal = 2
 text = "END OF WEEK REPORT"
 label_settings = SubResource("LabelSettings_x714m")
+
+[node name="paper_processed" type="Label" parent="." unique_id=316544651]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -60.0
+offset_right = 128.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paper Processed: "
+label_settings = SubResource("LabelSettings_7gml2")
+
+[node name="correct_paper" type="Label" parent="." unique_id=2143192434]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = 11.0
+offset_right = 151.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Correctly Reviewed: "
+label_settings = SubResource("LabelSettings_d3ujy")
+
+[node name="wrong_paper" type="Label" parent="." unique_id=1943299232]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = 46.0
+offset_right = 138.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wrongly Reviewed:"
+label_settings = SubResource("LabelSettings_0wt88")
+
+[node name="continue" type="Label" parent="." unique_id=715656145]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -68.0
+offset_right = 127.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Click anywhere to return to menu"
+label_settings = SubResource("LabelSettings_ea3v3")
+
+[node name="congratulations" type="Label" parent="." unique_id=745367273]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -138.0
+offset_right = 117.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Good job, editor."
+label_settings = SubResource("LabelSettings_j2o1e")
