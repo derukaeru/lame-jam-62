@@ -82,5 +82,5 @@ var guide: Array = [
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
 	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n7. Override all rules preceding if paper has Spade stamp.\n"],
 	["1. Remove all articles with a Club stamp.\n2. Remove any article mentioning Government \n3. Ignore Rule 1 if paper has a diamond stamp\n4. Remove papers based on opinions", 
-	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n7. Override all rules preceding if paper has Spade stamp.\n8. Remove any article  by Reporter (name). No Exceptions."],
+	"5. Papers with \"riot\", \"protest\", or \"unrest\" are banned.\n6. Foreign articles require a Heart stamp.\n7. Override all rules preceding if paper has Spade stamp.\n8. Remove any article  by Reporter Carter. No Exceptions."],
 ]

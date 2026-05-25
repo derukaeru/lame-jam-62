@@ -50,7 +50,7 @@ func _process(_delta) -> void:
 			
 			SceneChanger.change_scene("title_screen")
 		else:
-			if GameManager.day >= 8:
+			if GameManager.day >= 7:
 				SceneChanger.change_scene("end_day")
 			else:
 				GameManager.next_day()

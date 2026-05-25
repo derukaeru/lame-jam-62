@@ -3,7 +3,7 @@ extends Area2D
 # IDK WHAT TO CALL TS
 var tainted: bool = false
 var taint_type: String
-var taints: Array = ["club_stamp", "bad_topic", "unnamed_sources", "banned_words", "foreign", "by_reporter"]
+var taints: Array = ["club_stamp", "bad_topic", "unnamed_sources", "banned_words", "foreign", "bad_topic", "by_reporter"]
 
 var stamps: Array = []
 
